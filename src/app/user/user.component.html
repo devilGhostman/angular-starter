@@ -13,6 +13,32 @@
       <a routerLink="user/4">user 4</a>
     </li>
   </ul>
+  <br />
+  <br />
+  <div>
+    <h2>Example for two way binding</h2>
+    <br />
+    <label>username</label>
+    <br />
+    <input type="text" [(ngModel)]="username" />
+    <br />
+    <p>here is username:{{ username }}</p>
+  </div>
+  <div>
+    <h2>event binding example</h2>
+    <button [disabled]="username === ''" (click)="handleOnclick()">
+      Reset Username
+    </button>
+  </div>
+  <div>
+    <h2>Example for event binding and passing data</h2>
+    <br />
+    <label>password</label>
+    <br />
+    <input type="text" (input)="handleInput($event)" />
+    <br />
+    <p>here is password:{{ password }}</p>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
